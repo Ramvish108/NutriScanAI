@@ -1,0 +1,112 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  background: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(45,212,191,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,212,191,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+.center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Logo icon container */
+.logoIcon {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.logoEmoji {
+  font-size: 44px;
+  line-height: 1;
+  filter: drop-shadow(0 0 20px rgba(74,222,128,0.5));
+}
+
+.logoRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Wordmark */
+.wordmark {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.wordGreen { color: #4ADE80; }
+.wordTeal  { color: #2DD4BF; }
+.wordWhite {
+  color: #94A3B8;
+  font-weight: 400;
+  font-size: 0.55em;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+/* Tagline */
+.tagline {
+  font-size: clamp(0.82rem, 2.5vw, 1rem);
+  color: #64748B;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  max-width: 320px;
+  margin-bottom: 36px;
+}
+
+/* Loading dots */
+.dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4ADE80, #2DD4BF);
+}

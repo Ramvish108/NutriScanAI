@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap');
+
+/* ─── CSS Variables ─── */
+:root {
+  --eco-green:   #4ADE80;
+  --teal-pulse:  #2DD4BF;
+  --deep-blue:   #2563EB;
+  --midnight:    #0F172A;
+  --midnight-2:  #111827;
+  --midnight-3:  #1E293B;
+  --soft-slate:  #F8FAFC;
+  --muted:       #94A3B8;
+  --border:      rgba(255,255,255,0.07);
+  --gradient:    linear-gradient(135deg, #4ADE80, #2DD4BF, #2563EB);
+  --gradient-2:  linear-gradient(135deg, #4ADE80, #2DD4BF);
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   22px;
+  --radius-xl:   32px;
+  --shadow-glow: 0 0 40px rgba(74, 222, 128, 0.18);
+  --shadow-deep: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--midnight);
+  color: var(--soft-slate);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#4ADE80, #2DD4BF);
+  border-radius: 4px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(74, 222, 128, 0.25);
+  color: #fff;
+}
+
+/* ─── Utility ─── */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-pulse);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/* ─── Noise texture overlay ─── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Responsive helpers ─── */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 768px)  { .container { padding: 0 2rem; } }
+@media (min-width: 1200px) { .container { padding: 0 2.5rem; } }
+
+/* ─── Scroll section reveal base ─── */
+section { scroll-margin-top: 64px; }
